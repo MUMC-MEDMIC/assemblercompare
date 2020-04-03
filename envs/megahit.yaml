@@ -3,4 +3,4 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-    - idba=1.1.3
+    - megahit=1.2.9
