@@ -3,9 +3,6 @@ configfile: "samples/samples.yaml"
 
 SAMPLES = config["SAMPLES"]
 
-onstart:
-    shell:
-        "mkdir -p temp"
 
 rule all:
     input:
