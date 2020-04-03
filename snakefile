@@ -22,7 +22,7 @@ rule ska_distance:
     conda:
         "envs/SKA.yaml"
     shell:
-        "SKA distance {input} -o {params}"
+        "ska distance {input} -o {params}"
 
 
 
