@@ -12,7 +12,7 @@ rule all:
 rule ska_distance:
     input:
         skesa = expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
-        #spades = expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
+        spades = expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
         megahit = expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
     output:
         "results/distances/distances.distances.tsv"
