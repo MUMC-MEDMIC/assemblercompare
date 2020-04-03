@@ -3,3 +3,4 @@ config/
 samples/
 .snakemake
 logs/
+temp/*
