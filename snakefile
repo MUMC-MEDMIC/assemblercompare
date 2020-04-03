@@ -1,5 +1,6 @@
 
-configfile = 'config/samples.yaml'
+configfile: "samples/samples.yaml"
+
 SAMPLES = config["SAMPLES"]
 
 
@@ -8,11 +9,11 @@ rule all:
         "results/distances/distances.distances.dot"
 
 
-ska_distance:
+rule ska_distance:
     input:
-        expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
-        expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
-        expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
+        skesa = expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
+        spades = expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
+        megahit = expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
     output:
         "results/distances/distances.distances.dot"
     params:
@@ -54,7 +55,7 @@ rule skesa_ska:
     shell:
         "ska fasta {input.assembly} -o {params} "
          "2> {log}"
-localrule: skesa_ska
+localrules: skesa_ska
 
 rule spades:
     input:
@@ -86,7 +87,7 @@ rule spades_ska:
         "ska fasta {input.assembly} -o {params} "
          "2> {log}"
 
-localrule: spades_ska
+localrules: spades_ska
 
 
 rule megahit:
@@ -119,4 +120,4 @@ rule megahit_ska:
     shell:
         "ska fasta {input.assembly} -o {params} "
          "2> {log}"
-localrule:megahit_ska
+localrules: megahit_ska
