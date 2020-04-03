@@ -1,0 +1,4 @@
+results/
+config/
+samples/
+.snakemake
