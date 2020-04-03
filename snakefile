@@ -3,19 +3,22 @@ configfile: "samples/samples.yaml"
 
 SAMPLES = config["SAMPLES"]
 
+onstart:
+    shell:
+        "mkdir -p temp"
 
 rule all:
     input:
-        "results/distances/distances.distances.dot"
+        "results/distances/distances.distances.tsv"
 
 
 rule ska_distance:
     input:
         skesa = expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
-        spades = expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
+        #spades = expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
         megahit = expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
     output:
-        "results/distances/distances.distances.dot"
+        "results/distances/distances.distances.tsv"
     params:
         "results/distances/distances"
     threads: 1
@@ -95,20 +98,23 @@ rule megahit:
         forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
         reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']
     output:
-        "results/{sample}/megahit/assembly/final_contigs.fa"
+        "results/{sample}/megahit/assembly/final.contigs.fa"
     threads: 16
     params:
-        "results/{sample}/megahit/assembly"
+        dir = temp("temp/{sample}"),
+        temp = temp("temp/{sample}/megahit")
     conda:
         "envs/megahit.yaml"
     shell:
-        "megahit -1 {input.forward} -2 {input.reverse} -o {params} "
-        "-t {threads}"
+        "mkdir -p {params.dir} && "
+        "megahit -1 {input.forward} -2 {input.reverse} -o {params.temp} "
+        "-t {threads} &&"
+        "mv {params.temp}/final.contigs.fa {output}"
 
 
 rule megahit_ska:
     input:
-        assembly = "results/{sample}/megahit/assembly/final_contigs.fa"
+        assembly = "results/{sample}/megahit/assembly/final.contigs.fa"
     output:
         "results/data/{sample}/megahit_ska/{sample}_megahit.skf"
     params:
