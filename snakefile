@@ -1,8 +1,27 @@
 
+configfile = 'config/samples.yaml'
+SAMPLES = config["SAMPLES"]
+
+
+rule all:
+    input:
+        "results/distances/distances.distances.dot"
 
 
 ska_distance:
     input:
+        expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
+        expand("results/data/{sample}/skesa_ska/{sample}_spades.skf", sample = SAMPLES),
+        expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
+    output:
+        "results/distances/distances.distances.dot"
+    params:
+        "results/distances/distances"
+    threads: 1
+    conda:
+        "envs/SKA.yaml"
+    shell:
+        "SKA distance {input} -o {params}"
 
 
 
