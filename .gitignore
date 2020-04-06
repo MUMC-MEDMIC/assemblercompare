@@ -4,3 +4,6 @@ samples/
 .snakemake
 logs/
 temp/*
+
+# slurm meuk
+*out
