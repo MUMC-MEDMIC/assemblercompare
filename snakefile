@@ -62,7 +62,7 @@ rule spades:
         forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
         reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']
     output:
-        "results/{sample}/spades/assembly/assembly.fasta"
+        "results/{sample}/spades/assembly/scaffolds.fasta"
     threads: 16
     params:
         "results/{sample}/spades/assembly"
@@ -74,7 +74,7 @@ rule spades:
 
 rule spades_ska:
     input:
-        assembly = "results/{sample}/spades/assembly/assembly.fasta"
+        assembly = "results/{sample}/spades/assembly/scaffolds.fasta"
     output:
         "results/data/{sample}/spades_ska/{sample}_spades.skf"
     params:
