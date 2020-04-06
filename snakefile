@@ -13,7 +13,10 @@ rule ska_distance:
     input:
         skesa = expand("results/data/{sample}/skesa_ska/{sample}_skesa.skf", sample = SAMPLES),
         spades = expand("results/data/{sample}/spades_ska/{sample}_spades.skf", sample = SAMPLES),
-        megahit = expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES)
+        megahit = expand("results/data/{sample}/megahit_ska/{sample}_megahit.skf", sample = SAMPLES),
+        assemblyfree = expand("results/data/{sample}/assemblyfree/{sample}_assemblyfree.skf", sample = SAMPLES),
+        spadesnocorr = expand("results/data/{sample}/spadesnocorr_ska/{sample}_spadesnocorr.skf", sample = SAMPLES),
+
     output:
         "results/distances/distances.distances.tsv"
     params:
@@ -23,7 +26,6 @@ rule ska_distance:
         "envs/SKA.yaml"
     shell:
         "ska distance {input} -o {params}"
-
 
 
 rule skesa:
@@ -124,3 +126,51 @@ rule megahit_ska:
         "ska fasta {input.assembly} -o {params} "
          "2> {log}"
 localrules: megahit_ska
+
+
+rule assembly_free:
+    input:
+        forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
+        reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']
+    output:
+        "results/data/{sample}/assemblyfree/{sample}_assemblyfree.skf"
+    params:
+        "results/data/{sample}/assemblyfree/{sample}_assemblyfree"
+    conda:
+        "envs/SKA.yaml"
+    threads: 1
+    shell:
+        "ska fastq {input} -o {params}"
+
+
+rule spades:
+    input:
+        forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
+        reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']
+    output:
+        "results/{sample}/spadesnocorr/assembly/scaffolds.fasta"
+    threads: 16
+    params:
+        "results/{sample}/spadesnocorr/assembly"
+    conda:
+        "envs/spades.yaml"
+    shell:
+        "spades.py -1 {input.forward} -2 {input.reverse} -o {params} -only-assembler "
+        "-t {threads}"
+
+rule spades_ska:
+    input:
+        assembly = "results/{sample}/spadesnocorr/assembly/scaffolds.fasta"
+    output:
+        "results/data/{sample}/spadesnocorr_ska/{sample}_spadesnocorr.skf"
+    params:
+        "results/data/{sample}/spadesnocorr_ska/{sample}_spadesnocorr"
+    conda:
+        "envs/SKA.yaml"
+    log:
+        "logs/spades_ska/{sample}/log.txt"
+    shell:
+        "ska fasta {input.assembly} -o {params} "
+         "2> {log}"
+
+localrules: spades_ska
