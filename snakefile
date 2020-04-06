@@ -155,7 +155,7 @@ rule spadesnocorr:
     conda:
         "envs/spades.yaml"
     shell:
-        "spades.py -1 {input.forward} -2 {input.reverse} -o {params} -only-assembler "
+        "spades.py -1 {input.forward} -2 {input.reverse} -o {params} --only-assembler "
         "-t {threads}"
 
 rule spadesnocorr_ska:
