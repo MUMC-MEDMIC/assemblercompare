@@ -143,7 +143,7 @@ rule assembly_free:
         "ska fastq {input} -o {params}"
 
 
-rule spades:
+rule spadesnocorr
     input:
         forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
         reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']
@@ -158,7 +158,7 @@ rule spades:
         "spades.py -1 {input.forward} -2 {input.reverse} -o {params} -only-assembler "
         "-t {threads}"
 
-rule spades_ska:
+rule spadesnocorr_ska:
     input:
         assembly = "results/{sample}/spadesnocorr/assembly/scaffolds.fasta"
     output:
