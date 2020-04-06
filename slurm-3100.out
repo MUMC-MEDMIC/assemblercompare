@@ -1,0 +1,152 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 96
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	spades
+	1
+
+[Mon Apr  6 18:46:33 2020]
+rule spades:
+    input: /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz, /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz
+    output: results/2100015-UZA/spades/assembly/assembly.fasta
+    jobid: 0
+    wildcards: sample=2100015-UZA
+    threads: 16
+
+Activating conda environment: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d
+
+
+== Warning ==  No assembly mode was sepcified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d/bin/spades.py	-1	/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz	-2	/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz	-o	/home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly	-t	16	
+
+System information:
+  SPAdes version: 3.14.0
+  Python version: 3.8.2
+  OS: Linux-3.10.0-1062.1.1.el7.x86_64-x86_64-with-glibc2.10
+
+Output dir: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz']
+      right reads: ['/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/tmp
+  Threads: 16
+  Memory limit (in Gb): 250
+
+
+======= SPAdes pipeline started. Log can be found here: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/spades.log
+
+/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz: max reads length: 251
+/ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz: max reads length: 251
+
+Reads length: 251
+
+Default k-mer sizes were set to [21, 33, 55, 77, 99, 127] because estimated read length (251) is equal to or greater than 250
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d/bin/spades-hammer /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/corrected/configs/config.info
+
+  0:00:00.000    13M / 19M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.001    13M / 19M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/corrected/configs/config.info
+  0:00:00.005    13M / 19M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 16
+  0:00:00.005    13M / 19M   INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 250 Gb
+  0:00:00.005    13M / 19M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.007    13M / 19M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.007    13M / 19M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.007    13M / 19M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.015    13M / 19M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:00:00.015    13M / 19M   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 256 files using 16 threads. This might take a while.
+  0:00:00.021    14M / 19M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 65536
+  0:00:00.021    14M / 19M   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.20832 Gb
+  0:00:00.021    14M / 19M   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 262144
+  0:00:00.029    11G / 11G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz
+  0:00:18.493    11G / 11G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 1716463 reads
+  0:00:18.494    11G / 11G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz
+  0:00:38.299    11G / 11G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 3432926 reads
+  0:00:38.300    11G / 11G   INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 3432926 reads processed
+  0:00:38.465   196M / 11G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:00:46.203    89M / 11G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 101823804 kmers in total.
+  0:00:46.203    89M / 11G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:00:55.059    89M / 11G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  0:00:56.694   153M / 11G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  0:01:04.682   153M / 11G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 47223864 bytes occupied (3.71024 bits per kmer).
+  0:01:04.685   149M / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 351)   Arranging kmers in hash map order
+  0:01:10.127     2G / 11G   INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  0:03:16.075     2G / 11G   INFO    General                 (main.cpp                  : 155)   Extracting clusters
+  0:03:56.238     3G / 11G   INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 52585750
+  0:03:56.262     2G / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 371)   Collecting K-mer information, this takes a while.
+  0:03:56.607     4G / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz
+  0:04:32.486     4G / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz
+  0:05:08.262     4G / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 384)   Collection done, postprocessing.
+  0:05:08.711     4G / 11G   INFO   K-mer Counting           (kmer_data.cpp             : 398)   There are 101823804 kmers in total. Among them 85484650 (83.9535%) are singletons.
+  0:05:08.712     4G / 11G   INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+  0:05:19.497     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 649)   Subclustering done. Total 1404 non-read kmers were generated.
+  0:05:19.497     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 650)   Subclustering statistics:
+  0:05:19.498     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 651)     Total singleton hamming clusters: 42506312. Among them 1124448 (2.64537%) are good
+  0:05:19.498     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 652)     Total singleton subclusters: 6144. Among them 5883 (95.752%) are good
+  0:05:19.499     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 653)     Total non-singleton subcluster centers: 10331963. Among them 8606334 (83.2981%) are good
+  0:05:19.499     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 654)     Average size of non-trivial subcluster: 5.7414 kmers
+  0:05:19.500     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 655)     Average number of sub-clusters per non-singleton cluster: 1.02566
+  0:05:19.500     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 656)     Total solid k-mers: 9736665
+  0:05:19.500     4G / 11G   INFO   Hamming Subclustering    (kmer_cluster.cpp          : 657)     Substitution probabilities: [4,4]((0.92447,0.0338166,0.0254192,0.0162946),(0.0182655,0.957955,0.0106942,0.0130853),(0.012706,0.0103493,0.958313,0.0186316),(0.0160288,0.0250369,0.0334364,0.925498))
+  0:05:19.640     4G / 11G   INFO    General                 (main.cpp                  : 178)   Finished clustering.
+  0:05:19.640     4G / 11G   INFO    General                 (main.cpp                  : 197)   Starting solid k-mers expansion in 16 threads.
+  0:05:49.950     4G / 11G   INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 0 produced 123683 new k-mers.
+  0:06:20.172     4G / 11G   INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 1 produced 2825 new k-mers.
+  0:06:50.485     4G / 11G   INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 2 produced 28 new k-mers.
+  0:07:20.949     4G / 11G   INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 3 produced 0 new k-mers.
+  0:07:20.950     4G / 11G   INFO    General                 (main.cpp                  : 222)   Solid k-mers finalized
+  0:07:20.950     4G / 11G   INFO    General                 (hammer_tools.cpp          : 222)   Starting read correction in 16 threads.
+  0:07:20.951     4G / 11G   INFO    General                 (hammer_tools.cpp          : 235)   Correcting pair of reads: /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R1_001.fastq.gz and /ifs/data/mmbdiagnostics/WGS/illumina/i41health/harmonisatie/2100015-UZA/2100015_UZA_S4_L001_R2_001.fastq.gz
+  0:07:38.829     6G / 11G   INFO    General                 (hammer_tools.cpp          : 170)   Prepared batch 0 of 1600000 reads.
+  0:08:28.578     6G / 11G   INFO    General                 (hammer_tools.cpp          : 177)   Processed batch 0
+  0:08:31.770     6G / 11G   INFO    General                 (hammer_tools.cpp          : 187)   Written batch 0
+  0:08:33.083     7G / 11G   INFO    General                 (hammer_tools.cpp          : 170)   Prepared batch 1 of 116463 reads.
+  0:08:38.304     7G / 11G   INFO    General                 (hammer_tools.cpp          : 177)   Processed batch 1
+  0:08:38.609     7G / 11G   INFO    General                 (hammer_tools.cpp          : 187)   Written batch 1
+  0:09:00.158     6G / 11G   INFO    General                 (hammer_tools.cpp          : 276)   Correction done. Changed 3631177 bases in 759600 reads.
+  0:09:00.158     6G / 11G   INFO    General                 (hammer_tools.cpp          : 277)   Failed to correct 0 bases out of 752146335.
+  0:09:00.170     3G / 11G   INFO    General                 (main.cpp                  : 255)   Saving corrected dataset description to /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/corrected/corrected.yaml
+  0:09:00.187     3G / 11G   INFO    General                 (main.cpp                  : 262)   All done. Exiting.
+
+===== Read error correction finished. 
+
+
+===== corrected reads compression started. 
+
+
+== Running: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d/bin/python /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d/share/spades/spades_pipeline/scripts/compress_all.py --input_file /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/corrected/corrected.yaml --ext_python_modules_home /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/217e9d4d/share/spades --max_threads 16 --output_dir /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/results/2100015-UZA/spades/assembly/corrected --gzip_output
+
+== Compressing corrected reads (with gzip)
+slurmstepd: error: *** JOB 3100 ON node002 CANCELLED AT 2020-04-06T18:58:22 ***

@@ -143,7 +143,7 @@ rule assembly_free:
         "ska fastq {input} -o {params}"
 
 
-rule spadesnocorr
+rule spadesnocorr:
     input:
         forward = lambda wildcards: SAMPLES[wildcards.sample]['forward'],
         reverse = lambda wildcards: SAMPLES[wildcards.sample]['reverse']

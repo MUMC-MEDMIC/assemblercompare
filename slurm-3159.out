@@ -1,0 +1,118 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 96
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	ska_distance
+	1
+
+[Mon Apr  6 20:22:45 2020]
+rule ska_distance:
+    input: results/data/2100015-MUMC/skesa_ska/2100015-MUMC_skesa.skf, results/data/2100015-UA/skesa_ska/2100015-UA_skesa.skf, results/data/2100015-UZA/skesa_ska/2100015-UZA_skesa.skf, results/data/2200106-MUMC/skesa_ska/2200106-MUMC_skesa.skf, results/data/2200106-UA/skesa_ska/2200106-UA_skesa.skf, results/data/2200106-UZA/skesa_ska/2200106-UZA_skesa.skf, results/data/2200158-MUMC/skesa_ska/2200158-MUMC_skesa.skf, results/data/2200158-UA/skesa_ska/2200158-UA_skesa.skf, results/data/2200158-UZA/skesa_ska/2200158-UZA_skesa.skf, results/data/2200296-MUMC/skesa_ska/2200296-MUMC_skesa.skf, results/data/2200296-UA/skesa_ska/2200296-UA_skesa.skf, results/data/2200296-UZA/skesa_ska/2200296-UZA_skesa.skf, results/data/2200317-MUMC/skesa_ska/2200317-MUMC_skesa.skf, results/data/2200317-UA/skesa_ska/2200317-UA_skesa.skf, results/data/2200317-UZA/skesa_ska/2200317-UZA_skesa.skf, results/data/2200483-MUMC/skesa_ska/2200483-MUMC_skesa.skf, results/data/2200483-UA/skesa_ska/2200483-UA_skesa.skf, results/data/2200483-UZA/skesa_ska/2200483-UZA_skesa.skf, results/data/2201269-MUMC/skesa_ska/2201269-MUMC_skesa.skf, results/data/2201269-UA/skesa_ska/2201269-UA_skesa.skf, results/data/2201269-UZA/skesa_ska/2201269-UZA_skesa.skf, results/data/ecoli104-MUMC/skesa_ska/ecoli104-MUMC_skesa.skf, results/data/ecoli104-UA/skesa_ska/ecoli104-UA_skesa.skf, results/data/ecoli104-UZA/skesa_ska/ecoli104-UZA_skesa.skf, results/data/ecoli111-MUMC/skesa_ska/ecoli111-MUMC_skesa.skf, results/data/ecoli111-UA/skesa_ska/ecoli111-UA_skesa.skf, results/data/ecoli111-UZA/skesa_ska/ecoli111-UZA_skesa.skf, results/data/2100015-MUMC/spades_ska/2100015-MUMC_spades.skf, results/data/2100015-UA/spades_ska/2100015-UA_spades.skf, results/data/2100015-UZA/spades_ska/2100015-UZA_spades.skf, results/data/2200106-MUMC/spades_ska/2200106-MUMC_spades.skf, results/data/2200106-UA/spades_ska/2200106-UA_spades.skf, results/data/2200106-UZA/spades_ska/2200106-UZA_spades.skf, results/data/2200158-MUMC/spades_ska/2200158-MUMC_spades.skf, results/data/2200158-UA/spades_ska/2200158-UA_spades.skf, results/data/2200158-UZA/spades_ska/2200158-UZA_spades.skf, results/data/2200296-MUMC/spades_ska/2200296-MUMC_spades.skf, results/data/2200296-UA/spades_ska/2200296-UA_spades.skf, results/data/2200296-UZA/spades_ska/2200296-UZA_spades.skf, results/data/2200317-MUMC/spades_ska/2200317-MUMC_spades.skf, results/data/2200317-UA/spades_ska/2200317-UA_spades.skf, results/data/2200317-UZA/spades_ska/2200317-UZA_spades.skf, results/data/2200483-MUMC/spades_ska/2200483-MUMC_spades.skf, results/data/2200483-UA/spades_ska/2200483-UA_spades.skf, results/data/2200483-UZA/spades_ska/2200483-UZA_spades.skf, results/data/2201269-MUMC/spades_ska/2201269-MUMC_spades.skf, results/data/2201269-UA/spades_ska/2201269-UA_spades.skf, results/data/2201269-UZA/spades_ska/2201269-UZA_spades.skf, results/data/ecoli104-MUMC/spades_ska/ecoli104-MUMC_spades.skf, results/data/ecoli104-UA/spades_ska/ecoli104-UA_spades.skf, results/data/ecoli104-UZA/spades_ska/ecoli104-UZA_spades.skf, results/data/ecoli111-MUMC/spades_ska/ecoli111-MUMC_spades.skf, results/data/ecoli111-UA/spades_ska/ecoli111-UA_spades.skf, results/data/ecoli111-UZA/spades_ska/ecoli111-UZA_spades.skf, results/data/2100015-MUMC/megahit_ska/2100015-MUMC_megahit.skf, results/data/2100015-UA/megahit_ska/2100015-UA_megahit.skf, results/data/2100015-UZA/megahit_ska/2100015-UZA_megahit.skf, results/data/2200106-MUMC/megahit_ska/2200106-MUMC_megahit.skf, results/data/2200106-UA/megahit_ska/2200106-UA_megahit.skf, results/data/2200106-UZA/megahit_ska/2200106-UZA_megahit.skf, results/data/2200158-MUMC/megahit_ska/2200158-MUMC_megahit.skf, results/data/2200158-UA/megahit_ska/2200158-UA_megahit.skf, results/data/2200158-UZA/megahit_ska/2200158-UZA_megahit.skf, results/data/2200296-MUMC/megahit_ska/2200296-MUMC_megahit.skf, results/data/2200296-UA/megahit_ska/2200296-UA_megahit.skf, results/data/2200296-UZA/megahit_ska/2200296-UZA_megahit.skf, results/data/2200317-MUMC/megahit_ska/2200317-MUMC_megahit.skf, results/data/2200317-UA/megahit_ska/2200317-UA_megahit.skf, results/data/2200317-UZA/megahit_ska/2200317-UZA_megahit.skf, results/data/2200483-MUMC/megahit_ska/2200483-MUMC_megahit.skf, results/data/2200483-UA/megahit_ska/2200483-UA_megahit.skf, results/data/2200483-UZA/megahit_ska/2200483-UZA_megahit.skf, results/data/2201269-MUMC/megahit_ska/2201269-MUMC_megahit.skf, results/data/2201269-UA/megahit_ska/2201269-UA_megahit.skf, results/data/2201269-UZA/megahit_ska/2201269-UZA_megahit.skf, results/data/ecoli104-MUMC/megahit_ska/ecoli104-MUMC_megahit.skf, results/data/ecoli104-UA/megahit_ska/ecoli104-UA_megahit.skf, results/data/ecoli104-UZA/megahit_ska/ecoli104-UZA_megahit.skf, results/data/ecoli111-MUMC/megahit_ska/ecoli111-MUMC_megahit.skf, results/data/ecoli111-UA/megahit_ska/ecoli111-UA_megahit.skf, results/data/ecoli111-UZA/megahit_ska/ecoli111-UZA_megahit.skf
+    output: results/distances/distances.distances.tsv
+    jobid: 0
+
+Activating conda environment: /home/c.jamin/analyses/assemblercompareharmo/assemblercompare/.snakemake/conda/fcf0404e
+
+SKA: Split Kmer Analysis
+Version: 1.0
+Citation: TBA
+
+Calculating pairwise distances for 81 files
+Clusters will be created for isolates that are within 20 SNPs of one another and share at least 90% of the split kmers of the isolate with fewer kmers
+Distances will be written to results/distances/distances.distances.tsv
+Clusters will be written to files with the prefix results/distances/distances
+
+Collecting number of samples 
+Found 81 samples in 81 files
+Reading results/data/2100015-MUMC/skesa_ska/2100015-MUMC_skesa.skf
+Reading results/data/2100015-UA/skesa_ska/2100015-UA_skesa.skf
+Reading results/data/2100015-UZA/skesa_ska/2100015-UZA_skesa.skf
+Reading results/data/2200106-MUMC/skesa_ska/2200106-MUMC_skesa.skf
+Reading results/data/2200106-UA/skesa_ska/2200106-UA_skesa.skf
+Reading results/data/2200106-UZA/skesa_ska/2200106-UZA_skesa.skf
+Reading results/data/2200158-MUMC/skesa_ska/2200158-MUMC_skesa.skf
+Reading results/data/2200158-UA/skesa_ska/2200158-UA_skesa.skf
+Reading results/data/2200158-UZA/skesa_ska/2200158-UZA_skesa.skf
+Reading results/data/2200296-MUMC/skesa_ska/2200296-MUMC_skesa.skf
+Reading results/data/2200296-UA/skesa_ska/2200296-UA_skesa.skf
+Reading results/data/2200296-UZA/skesa_ska/2200296-UZA_skesa.skf
+Reading results/data/2200317-MUMC/skesa_ska/2200317-MUMC_skesa.skf
+Reading results/data/2200317-UA/skesa_ska/2200317-UA_skesa.skf
+Reading results/data/2200317-UZA/skesa_ska/2200317-UZA_skesa.skf
+Reading results/data/2200483-MUMC/skesa_ska/2200483-MUMC_skesa.skf
+Reading results/data/2200483-UA/skesa_ska/2200483-UA_skesa.skf
+Reading results/data/2200483-UZA/skesa_ska/2200483-UZA_skesa.skf
+Reading results/data/2201269-MUMC/skesa_ska/2201269-MUMC_skesa.skf
+Reading results/data/2201269-UA/skesa_ska/2201269-UA_skesa.skf
+Reading results/data/2201269-UZA/skesa_ska/2201269-UZA_skesa.skf
+Reading results/data/ecoli104-MUMC/skesa_ska/ecoli104-MUMC_skesa.skf
+Reading results/data/ecoli104-UA/skesa_ska/ecoli104-UA_skesa.skf
+Reading results/data/ecoli104-UZA/skesa_ska/ecoli104-UZA_skesa.skf
+Reading results/data/ecoli111-MUMC/skesa_ska/ecoli111-MUMC_skesa.skf
+Reading results/data/ecoli111-UA/skesa_ska/ecoli111-UA_skesa.skf
+Reading results/data/ecoli111-UZA/skesa_ska/ecoli111-UZA_skesa.skf
+Reading results/data/2100015-MUMC/spades_ska/2100015-MUMC_spades.skf
+Reading results/data/2100015-UA/spades_ska/2100015-UA_spades.skf
+Reading results/data/2100015-UZA/spades_ska/2100015-UZA_spades.skf
+Reading results/data/2200106-MUMC/spades_ska/2200106-MUMC_spades.skf
+Reading results/data/2200106-UA/spades_ska/2200106-UA_spades.skf
+Reading results/data/2200106-UZA/spades_ska/2200106-UZA_spades.skf
+Reading results/data/2200158-MUMC/spades_ska/2200158-MUMC_spades.skf
+Reading results/data/2200158-UA/spades_ska/2200158-UA_spades.skf
+Reading results/data/2200158-UZA/spades_ska/2200158-UZA_spades.skf
+Reading results/data/2200296-MUMC/spades_ska/2200296-MUMC_spades.skf
+Reading results/data/2200296-UA/spades_ska/2200296-UA_spades.skf
+Reading results/data/2200296-UZA/spades_ska/2200296-UZA_spades.skf
+Reading results/data/2200317-MUMC/spades_ska/2200317-MUMC_spades.skf
+Reading results/data/2200317-UA/spades_ska/2200317-UA_spades.skf
+Reading results/data/2200317-UZA/spades_ska/2200317-UZA_spades.skf
+Reading results/data/2200483-MUMC/spades_ska/2200483-MUMC_spades.skf
+Reading results/data/2200483-UA/spades_ska/2200483-UA_spades.skf
+Reading results/data/2200483-UZA/spades_ska/2200483-UZA_spades.skf
+Reading results/data/2201269-MUMC/spades_ska/2201269-MUMC_spades.skf
+Reading results/data/2201269-UA/spades_ska/2201269-UA_spades.skf
+Reading results/data/2201269-UZA/spades_ska/2201269-UZA_spades.skf
+Reading results/data/ecoli104-MUMC/spades_ska/ecoli104-MUMC_spades.skf
+Reading results/data/ecoli104-UA/spades_ska/ecoli104-UA_spades.skf
+Reading results/data/ecoli104-UZA/spades_ska/ecoli104-UZA_spades.skf
+Reading results/data/ecoli111-MUMC/spades_ska/ecoli111-MUMC_spades.skf
+Reading results/data/ecoli111-UA/spades_ska/ecoli111-UA_spades.skf
+Reading results/data/ecoli111-UZA/spades_ska/ecoli111-UZA_spades.skf
+Reading results/data/2100015-MUMC/megahit_ska/2100015-MUMC_megahit.skf
+Reading results/data/2100015-UA/megahit_ska/2100015-UA_megahit.skf
+Reading results/data/2100015-UZA/megahit_ska/2100015-UZA_megahit.skf
+Reading results/data/2200106-MUMC/megahit_ska/2200106-MUMC_megahit.skf
+Reading results/data/2200106-UA/megahit_ska/2200106-UA_megahit.skf
+Reading results/data/2200106-UZA/megahit_ska/2200106-UZA_megahit.skf
+Reading results/data/2200158-MUMC/megahit_ska/2200158-MUMC_megahit.skf
+Reading results/data/2200158-UA/megahit_ska/2200158-UA_megahit.skf
+Reading results/data/2200158-UZA/megahit_ska/2200158-UZA_megahit.skf
+Reading results/data/2200296-MUMC/megahit_ska/2200296-MUMC_megahit.skf
+Reading results/data/2200296-UA/megahit_ska/2200296-UA_megahit.skf
+Reading results/data/2200296-UZA/megahit_ska/2200296-UZA_megahit.skf
+Reading results/data/2200317-MUMC/megahit_ska/2200317-MUMC_megahit.skf
+Reading results/data/2200317-UA/megahit_ska/2200317-UA_megahit.skf
+Reading results/data/2200317-UZA/megahit_ska/2200317-UZA_megahit.skf
+Reading results/data/2200483-MUMC/megahit_ska/2200483-MUMC_megahit.skf
+Reading results/data/2200483-UA/megahit_ska/2200483-UA_megahit.skf
+Reading results/data/2200483-UZA/megahit_ska/2200483-UZA_megahit.skf
+Reading results/data/2201269-MUMC/megahit_ska/2201269-MUMC_megahit.skf
+Reading results/data/2201269-UA/megahit_ska/2201269-UA_megahit.skf
+Reading results/data/2201269-UZA/megahit_ska/2201269-UZA_megahit.skf
+Reading results/data/ecoli104-MUMC/megahit_ska/ecoli104-MUMC_megahit.skf
+Reading results/data/ecoli104-UA/megahit_ska/ecoli104-UA_megahit.skf
+Reading results/data/ecoli104-UZA/megahit_ska/ecoli104-UZA_megahit.skf
+Reading results/data/ecoli111-MUMC/megahit_ska/ecoli111-MUMC_megahit.skf
+Reading results/data/ecoli111-UA/megahit_ska/ecoli111-UA_megahit.skf
+Reading results/data/ecoli111-UZA/megahit_ska/ecoli111-UZA_megahit.skf
+20244022 kmers read from 81 samples in 81 files
+Calculating SNP distances
+Printing clusters to results/distances/distances.clusters.tsv
+Printing distances to results/distances/distances.distances.tsv
+Done
+Total time required: 253.77s
+[Mon Apr  6 20:27:01 2020]
+Finished job 0.
+1 of 1 steps (100%) done
