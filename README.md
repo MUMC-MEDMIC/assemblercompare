@@ -8,7 +8,7 @@ and differences on SNP basis was checked using SKA.
  python >= 3.6.  
  snakemake.  
  
-* usage
+* usage:   
 first generate a samplesheet that is read by snakemake.
 ```
 python assemblercompare.py -i {dir_with_subdir_samples}
