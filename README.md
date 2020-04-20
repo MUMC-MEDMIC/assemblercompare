@@ -1,7 +1,7 @@
 # assemblercompare
 
-this repo contains the complete data-preprocessing to generate assemblies using SPAdes (with and without error correction), Megahit SKESA
-and differences on SNP basis was checked using SKA.
+this repo contains the complete data-preprocessing to generate assemblies using SPAdes (with and without error correction), Megahit, SKESA.  
+Differences on SNP basis are checked using SKA.
 
 * requirements:  
  conda   
