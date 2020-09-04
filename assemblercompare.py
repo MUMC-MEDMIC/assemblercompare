@@ -55,9 +55,10 @@ def main(command_line = None):
     #add main parser object
     parser = ArgumentParser(description = "input directory with subdirectories with reads")
     parser.add_argument("-i", required = True, dest = "input_dir")
+    parser.add_argument("--cores", required = True, dest = "cores")
     args = parser.parse_args(command_line)
     define_input(args.input_dir)
-    #launch(args.cores)
+    launch(args.cores)
 
 if __name__ == "__main__":
     main()
