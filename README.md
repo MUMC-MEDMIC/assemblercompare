@@ -9,12 +9,10 @@ Differences on SNP basis are checked using SKA.
  snakemake.  
  
 * usage:   
-first generate a samplesheet that is read by snakemake.
+ Generate a samplesheet that is read by snakemake and launch entire workflow.
 ```
-python assemblercompare.py -i {dir_with_subdir_samples}
+python assemblercompare.py -i {dir_with_subdir_samples} --cores {number_of_CPU_cores}
 ```
 
-then you can run snakemake to generate all required files, from within this repo location using:
-```
-snakemake --use-conda --cores {number of cores available}
-```
+
+
