@@ -14,5 +14,6 @@ Differences on SNP basis are checked using SKA.
 python assemblercompare.py -i {dir_with_subdir_samples} --cores {number_of_CPU_cores}
 ```
 
-
+this repository belongs to published work:  
+Jamin, C., De Koster, S., van Koeveringe, S., De Coninck, D., Mensaert, K., De Bruyne, K., ... & van Alphen, L. (2021). Harmonization of whole-genome sequencing for outbreak surveillance of Enterobacteriaceae and Enterococci. Microbial genomics, 7(7)
 
